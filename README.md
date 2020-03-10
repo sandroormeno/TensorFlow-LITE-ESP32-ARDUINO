@@ -5,7 +5,14 @@
 In this example i am testing my .tensorFlow LITE. library with IRIS dataset. I used Arduino 1.6.9 but it works with the last vertion as well.   
 The Model was trained in .CoLab. and it has saved in Hexadecimal to  moved into .Arduino. environment.   
 The data were divided in 80% for training am 20% for testing, these last were used in arduino.  
-Pay attention of the version tensorFlow for experience success.  
+Pay attention of the version tensorFlow for experience success.
+```python
+print("TensorFlow version: {}".format(tf.__version__))
+```
+```sh
+TensorFlow version: 2.1.0
+```
+Those are the results:  
 ``` text
 
 |-----------------------TensorFlowLite-ESP32-----------------------|
