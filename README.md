@@ -2,7 +2,7 @@
 # TensorFlow LITE ESP32 ARDUINO
 
 ![imagen](0.jpg)  
-In this example i am testing my [__tensorFlow LITE__](https://github.com/sandroormeno/share_aws/blob/master/hello_world.zip?raw=true)  library with IRIS dataset. I used Arduino 1.6.9 but it works with the last vertion as well.   
+In this example i am testing my [__tensorFlow LITE__](https://github.com/sandroormeno/share_aws/blob/master/hello_world.zip?raw=true)  library with [IRIS dataset](https://github.com/sandroormeno/Tensorflow-basic-examples/blob/master/datos/iris.csv), more information in [Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/iris) or [Wiki](https://es.wikipedia.org/wiki/Conjunto_de_datos_flor_iris). I used Arduino 1.6.9 but it works with the last vertion as well.   
 The Model was trained in [__CoLab__](https://github.com/sandroormeno/TensorFlow-LITE-ESP32-ARDUINO/blob/master/tutorial.ipynb) and it has saved in Hexadecimal to  moved into __Arduino__   
 The data were divided in 80% for training am 20% for testing, these last were used in arduino.  
 Pay attention of the version tensorFlow for experience success.
