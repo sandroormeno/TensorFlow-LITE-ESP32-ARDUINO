@@ -8,7 +8,7 @@ The data were divided in 80% for training am 20% for testing, these last were us
 Pay attention of the version tensorFlow for experience success.
 ```python
 print("TensorFlow version: {}".format(tf.__version__))
-``````sh
+``` ```sh
 TensorFlow version: 2.1.0
 ```
 Those are the results:  
