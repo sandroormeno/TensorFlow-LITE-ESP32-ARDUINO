@@ -50,4 +50,8 @@ Those are the results:
 |   0.00000     0.11228     0.00001   |    0.00    1.00    0.00    |
 |   0.00000     0.16335     0.00005   |    0.00    1.00    0.00    |
 |-------------------------------------|----------------------------|
-```  
+```   
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=dEHGv-TEOl8
+" target="_blank"><img src="https://github.com/sandroormeno/proyecto_dotcsv/blob/master/youtube.jpg" 
+alt="IMAGE ALT TEXT HERE" width="600" height="300" border="10" /></a> 
