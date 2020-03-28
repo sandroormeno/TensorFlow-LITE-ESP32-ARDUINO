@@ -4,7 +4,7 @@
 ![imagen](0.jpg)  
 In this example i am testing my [__TensorFlow LITE__](https://github.com/sandroormeno/share_aws/blob/master/hello_world.zip?raw=true)  library with [IRIS dataset](https://github.com/sandroormeno/Tensorflow-basic-examples/blob/master/datos/iris.csv), more information in [_Machine Learning Repository_](https://archive.ics.uci.edu/ml/datasets/iris) or [_Wiki_](https://es.wikipedia.org/wiki/Conjunto_de_datos_flor_iris). I used Arduino 1.6.9 but it works with the last vertion as well.   
 The Model was trained in [__CoLab__](https://github.com/sandroormeno/TensorFlow-LITE-ESP32-ARDUINO/blob/master/tutorial.ipynb) and it has saved in Hexadecimal to  moved into __Arduino__.
-![imagen](info.png)
+![imagen](info.png)  
 The data were divided in 80% for training am 20% for testing, these last were used in arduino.  
 Pay attention of the version tensorFlow for experience success.
 ```python
