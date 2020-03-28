@@ -53,5 +53,5 @@ Those are the results:
 ```   
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=dEHGv-TEOl8
-" target="_blank"><img src="https://github.com/sandroormeno/proyecto_dotcsv/blob/master/youtube.jpg" 
+" target="_blank"><img src="https://github.com/sandroormeno/TensorFlow-LITE-ESP32-ARDUINO/blob/master/video.JPG" 
 alt="IMAGE ALT TEXT HERE" width="600" height="300" border="10" /></a> 
