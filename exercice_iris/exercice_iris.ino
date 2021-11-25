@@ -6,20 +6,17 @@
 #include "tensorflow/lite/version.h"
 #include "data.h"
 
-// Globales, utilizados para compatibilidad con Sketch de  Arduino.
 namespace { 
   tflite::ErrorReporter* error_reporter = nullptr;
   const tflite::Model* model = nullptr;
   tflite::MicroInterpreter* interpreter = nullptr;
   TfLiteTensor* input = nullptr;
   TfLiteTensor* output = nullptr;
-  // Cree un área de memoria para entradas, salidas y matrices intermedias.
-  // Encontrar el valor mínimo para su modelo puede requerir alguna prueba y error.
   constexpr int kTensorArenaSize = 4 * 1024;
   uint8_t tensor_arena[kTensorArenaSize];
 }  
 
-// El nombre de esta función es importante para la compatibilidad con Arduino.
+
 
 void setup() {
   Serial.begin(115200);
@@ -27,18 +24,9 @@ void setup() {
   static tflite::MicroErrorReporter micro_error_reporter;
   error_reporter = &micro_error_reporter;
 
-  // Configurar registro. Se debe evitar el estilo de Google global
-  // o estático debido a la incertidumbre del tiempo de vida, 
-  // pero tiene un destructor trivial, está bien.
-  // NOLINTNEXTLINE (variables globales en tiempo de ejecución)
-  // Asigne el modelo en una estructura de datos utilizable.
-  // Esto no implica ninguna copia o análisis,
-  // es una operación muy ligera.
 
   model = tflite::GetModel(mi_data);
 
-  // Esto suena en todas las implementaciones de operaciones que necesitamos.
-  // NOLINTNEXTLINE (variables globales en tiempo de ejecución)
   static tflite::ops::micro::AllOpsResolver resolver;
 
   // Cree un intérprete para ejecutar el modelo.
@@ -49,7 +37,7 @@ void setup() {
                                                       error_reporter);
   interpreter = &static_interpreter;
 
-  // Asignar memoria de tensor_arena para los tensores del modelo.
+  // Asignar memoria  para los tensores del modelo.
   TfLiteStatus allocate_status = interpreter->AllocateTensors();
 
   // Obtenga punteros a los tensores de entrada y salida del modelo.
@@ -65,21 +53,22 @@ void setup() {
   int features = 4;
   for (int i = 0; i < samples; i++) {
     for (int u = 0; u < features; u++) {
-      // Coloque nuestro valor calculado en el tensor de entrada del modelo
+      // Coloque el valor calculado en el tensor de entrada del modelo
       input->data.f[u] = test[i][u];
     }
     
     // estas líneas de código son para comparar con las etiquetas reales
+    
     float real1 = labels[i][0];
     float real2 = labels[i][1];
     float real3 = labels[i][2];
 
-    //
     // Ejecute el modelo en esta entrada y verifique que tenga éxito
     TfLiteStatus invoke_status = interpreter->Invoke();
 
 
     // Obtenga el valor de salida del tensor
+    
     float out_1 = output->data.f[0];
     float out_2 = output->data.f[1];
     float out_3 = output->data.f[2];
