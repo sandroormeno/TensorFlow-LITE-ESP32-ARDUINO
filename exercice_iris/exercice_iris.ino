@@ -23,7 +23,9 @@ namespace {
 
 void setup() {
   Serial.begin(115200);
-
+  
+  static tflite::MicroErrorReporter micro_error_reporter;
+  error_reporter = &micro_error_reporter;
 
   // Configurar registro. Se debe evitar el estilo de Google global
   // o estático debido a la incertidumbre del tiempo de vida, 
@@ -42,7 +44,8 @@ void setup() {
   // Cree un intérprete para ejecutar el modelo.
   static tflite::MicroInterpreter static_interpreter( model, 
                                                       resolver, 
-                                                      tensor_arena,                                                  kTensorArenaSize, 
+                                                      tensor_arena,
+                                                      kTensorArenaSize, 
                                                       error_reporter);
   interpreter = &static_interpreter;
 
